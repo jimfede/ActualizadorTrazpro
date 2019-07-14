@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActualizadorTrazpro", "ActualizadorTrazpro\ActualizadorTrazpro.csproj", "{DF8A46AB-C8B3-4936-B2CF-B46239BB2488}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF8A46AB-C8B3-4936-B2CF-B46239BB2488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF8A46AB-C8B3-4936-B2CF-B46239BB2488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF8A46AB-C8B3-4936-B2CF-B46239BB2488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF8A46AB-C8B3-4936-B2CF-B46239BB2488}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA3D5788-2B22-4624-A20E-7A02C31ED359}
+	EndGlobalSection
+EndGlobal
