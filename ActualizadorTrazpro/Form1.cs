@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,17 +21,14 @@ namespace ActualizadorTrazpro
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             label1.Text = "";
             progressBar1.Value = 0;
-            CopyFolderContents("\\\\10.26.32.13\\ActualizacionTrazPro\\EjecutablesRotulos\\Desosado", "c:\\TrazproTest");
-            /*CopyFolderContents("\\\\10.26.32.13\\ActualizacionTrazPro\\EjecutablesRotulos\\Desosado", "c:\\TrazproTest");
-            CopyFolderContents("\\\\10.26.32.13\\ActualizacionTrazPro\\EjecutablesTrazPro", "c:\\TrazproTest");*/
-
+            CopyFolderContents("\\\\10.26.32.13\\ActualizacionTrazPro\\PruebasActualizador", "c:\\TrazproTest");
         }
 
         public void CopyFolderContents(string sourceFolder, string destinationFolder)
@@ -72,9 +70,19 @@ namespace ActualizadorTrazpro
                     {
                         File.Copy(srcFile.FullName, destFile.FullName, true);
 
-                        progressBar1.PerformStep();
+                        label1.Text = "Actualizando: " + destFile.Name.ToString();
+                        label1.Refresh();
+
+                        progressBar1.Maximum = (int)srcFile.Length;
+                        var progBarStep = (int)srcFile.Length / 100;
+                        progressBar1.Step = progBarStep;
+                        for (int i = 0; i < srcFile.Length; i += progBarStep)
+                        {
+                            progressBar1.PerformStep();
+                        }
+
                     }
-                                        
+
                 }
 
                 label1.Text = "Actualización completada";
